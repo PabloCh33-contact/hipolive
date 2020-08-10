@@ -16,7 +16,7 @@
 			}
 //Star avis
 			const allStars = document.querySelectorAll(".fa-star");
-			console.log("allStars", allStars);
+			//console.log("allStars", allStars);
 
 			init();
 
@@ -37,10 +37,10 @@
 					overedStar.classList.add(css);
 					const previousSiblings = getPreviousSiblings(overedStar);
 					console.log("previousSiblings", previousSiblings);
+					previousSiblings.forEach((elem) => elem.classList.add(css));
 				}
-				function removeCSS(e, css = "checked"){
+				function removeCSS(e, css = "checked") {
 					e.target.classList.remove(css);
-
 				}
 
 				function getPreviousSiblings(elem) {
@@ -51,8 +51,14 @@
 						if (elem.nodeType === spanNodeType) {
 							siblings = [elem, ...siblings];
 						}
-
 					}
-						return siblings;
+					return siblings;
 
-					}
+				}
+
+
+
+
+
+
+
